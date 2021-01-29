@@ -1,17 +1,91 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Child
+      :key="data.id"
+      v-for="data in arrayOfData"
+      :child="data"
+    />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Child from './components/Child.vue'
 
 export default {
   name: 'App',
+  data () {
+    return {
+      arrayOfData: [
+        {
+          id: 1,
+          text: "text1",
+          child: [
+            {
+              id: 2,
+              text: "text2",
+              child: null
+            },
+            {
+              id: 3,
+              text: "text3",
+              child: [
+                {
+                  id: 4,
+                  text: "text4",
+                  child: null
+                },
+                {
+                  id: 5,
+                  text: "text5",
+                  child: null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          id: 6,
+          text: "text6",
+          child: [
+            {
+              id: 7,
+              text: "text7",
+              child: null
+            },
+            {
+              id: 8,
+              text: "text8",
+              child: [
+                {
+                  id: 9,
+                  text: "text9",
+                  child: null
+                },
+                {
+                  id: 10,
+                  text: "text10",
+                  child: [
+                    {
+                      id: 11,
+                      text: "text11",
+                      child: null
+                    },
+                    {
+                      id: 12,
+                      text: "text12",
+                      child: null
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
   components: {
-    HelloWorld
+    Child
   }
 }
 </script>
