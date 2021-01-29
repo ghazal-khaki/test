@@ -1,5 +1,5 @@
 # test
-
+a test project for writing a recursive components in vue.
 ## Project setup
 ```
 npm install
